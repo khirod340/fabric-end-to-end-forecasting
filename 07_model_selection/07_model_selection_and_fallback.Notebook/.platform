@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "07_model_selection_and_fallback"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d3b041ee-20ab-ab37-4a63-93b11a95d57d"
+  }
+}

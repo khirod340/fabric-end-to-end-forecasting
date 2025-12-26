@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MLExperiment",
+    "displayName": "DEV_sales_forecasting"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ec545532-3e78-be6c-4fb4-420f68613057"
+  }
+}

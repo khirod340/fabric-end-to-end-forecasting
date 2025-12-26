@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "09_alerts_and_rollback"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7ee6751a-024f-97cd-4e0f-dbcba6303915"
+  }
+}
