@@ -1,0 +1,100 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "e602dd95-c988-b9aa-4b14-5cb1e7012ee2",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "ENV": {
+              "value": {
+                "value": "@pipeline().parameters.ENV",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "07_model_performance_monitor",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "f0f33b9b-7edd-8e0b-4fd9-ecaeed54ae21",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "ENV": {
+              "value": {
+                "value": "@pipeline().parameters.ENV",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "08_monitoring_drift",
+        "dependsOn": [
+          {
+            "activity": "07_model_performance_monitor",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "7ee6751a-024f-97cd-4e0f-dbcba6303915",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "ENV": {
+              "value": {
+                "value": "@pipeline().parameters.ENV",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "09_alerts_and_rollback",
+        "dependsOn": [
+          {
+            "activity": "08_monitoring_drift",
+            "dependencyConditions": [
+              "Completed"
+            ]
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "ENV": {
+        "type": "string"
+      }
+    }
+  }
+}
