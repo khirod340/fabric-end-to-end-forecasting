@@ -44,7 +44,7 @@ ENV = str(ENV).upper().strip()
 if ENV == "DEV":
     LAKEHOUSE_NAME = "Sales_Lakehouse_DEV"
     MLFLOW_EXPERIMENT_NAME = "DEV_sales_forecasting"
-    ALERT_EMAILS = ["dev-ml@company.com"]
+    ALERT_EMAILS = ["khirod@tbf4v.onmicrosoft.com"]
     DRIFT_THRESHOLD = 0.25
     ROLLBACK_THRESHOLD = 1.05
 
